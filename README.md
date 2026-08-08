@@ -93,11 +93,9 @@ CLOUDINARY_API_SECRET=your_cloudinary_api_secret
 RAZORPAY_KEY_ID=your_razorpay_key_id
 RAZORPAY_KEY_SECRET=your_razorpay_key_secret
 
-SMTP_HOST=your_smtp_host
-SMTP_PORT=your_smtp_port
-SMTP_USERNAME=your_smtp_username
-SMTP_PASSWORD=your_smtp_password
-SMTP_FROM_EMAIL=your_from_email
+EMAIL_USER=your_smtp_username
+EMAIL_PASSWORD=your_smtp_password
+EMAIL_FROM=your_from_email
 ```
 
 Run the backend in development mode:
@@ -154,7 +152,3 @@ Base URL: `/api/v1`
 ## Contributing
 
 Contributions are welcome! Please open an issue to discuss what you'd like to change, or submit a pull request.
-
-## License
-
-This project currently has no license specified. Add a `LICENSE` file if you'd like to define usage terms.
