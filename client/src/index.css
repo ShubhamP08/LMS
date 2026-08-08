@@ -1,0 +1,46 @@
+@import "tailwindcss";
+@plugin "daisyui";
+/* Delete the body max-width restrictions entirely so elements can span end-to-end */
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Fix: DaisyUI dark theme causes inputs to turn black on focus/autofill */
+.input {
+  background-color: #ffffff !important;
+  color: #111111 !important;
+  color-scheme: light !important;
+}
+
+.input:focus,
+.input:focus-within,
+.input:hover {
+  background-color: #ffffff !important;
+  color: #111111 !important;
+}
+
+/* Fix browser autofill background */
+.input:-webkit-autofill,
+.input:-webkit-autofill:hover,
+.input:-webkit-autofill:focus {
+  -webkit-text-fill-color: #111111 !important;
+  -webkit-box-shadow: 0 0 0px 1000px #ffffff inset !important;
+  box-shadow: 0 0 0px 1000px #ffffff inset !important;
+  color-scheme: light !important;
+}
+
+/* Fix: DaisyUI dark theme causes textareas to turn black on focus */
+.textarea {
+  background-color: #ffffff !important;
+  color: #111111 !important;
+  color-scheme: light !important;
+}
+
+.textarea:focus,
+.textarea:focus-within,
+.textarea:hover {
+  background-color: #ffffff !important;
+  color: #111111 !important;
+}
