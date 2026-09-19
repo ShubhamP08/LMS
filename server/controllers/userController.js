@@ -81,9 +81,9 @@ const login=async(req,res,next)=>{
         if(!isPasswordMatched){
             return next(new AppError('Invalid email or password',401))
         }
-        user.password=undefined
         user.tokenVersion+=1;
         await user.save();
+        user.password=undefined
         const token=await user.getJWTToken()
         res.cookie('token',token,{
             httpOnly:true,
