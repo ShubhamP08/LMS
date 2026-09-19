@@ -14,7 +14,7 @@ const isLoggedIn=async(req,res,next)=>{
         if(!user){
             return next(new AppError('User not found, please login again',404))
         }
-        if(user.tokenVersion!==decoded.tokenVersion){
+        if(Number(user.tokenVersion)!==Number(decoded.tokenVersion)){
             return next(new AppError("You have been logged in from another device",401));
         }
         req.user=user
