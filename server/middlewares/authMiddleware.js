@@ -9,13 +9,13 @@ const isLoggedIn=async(req,res,next)=>{
         return next(new AppError('Unauthenticated, please login to access this resource',401))
     }
     try {
-        console.log("Token:", req.cookies.token);
         const decoded=jwt.verify(token,process.env.JWT_SECRET)
-        console.log("DECODED:", decoded)
         const user=await User.findById(decoded._id)
-        console.log("USER:", user)
         if(!user){
             return next(new AppError('User not found, please login again',404))
+        }
+        if(user.tokenVersion!==decoded.tokenVersion){
+            return next(new AppError("You have been logged in from another device",401));
         }
         req.user=user
         next()
