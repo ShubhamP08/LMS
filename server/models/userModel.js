@@ -47,6 +47,9 @@ const userSchema = new Schema({
     },
     forgotPasswordExpiryDate:{
         type:Date
+    },tokenVersion: {
+        type:Number,
+        default:0
     }
 },{
     timestamps:true
